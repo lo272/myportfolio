@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Layla Obeid Portfolio</title>
+    <style>
+        /* Copy the same CSS styles used in your main file */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Garamond", serif;
+        }
+        body {
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: white;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        header nav a:hover {
+            color: #00aaff;
+        }
+        #contact {
+            padding: 2rem;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        #contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+        #contact-form label {
+            display: block;
+            margin: 0.5rem 0;
+        }
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #contact-form button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        #contact-form button:hover {
+            background-color: #00aaff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Layla Obeid</h1>
+        <nav>
+            <a href="index.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name && email && message) {
+                alert("Message sent successfully!");
+                document.getElementById("contact-form").reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>
